@@ -18,5 +18,5 @@
         ]
        }
     },
-    "postCreateCommand": "cd /workspaces/${localWorkspaceFolderBasename}"
+    "postCreateCommand": "cd /workspaces/${localWorkspaceFolderBasename} && minikube start"
 }
