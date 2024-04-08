@@ -17,6 +17,5 @@
             "42Crunch.vscode-openapi"
         ]
        }
-    },
-    "postCreateCommand": "cd /workspaces/${localWorkspaceFolderBasename} && minikube start"
+    }
 }
