@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-app
+  labels:
+    app: my-app
+spec:
+  strategy:
+    type: Recreate
+  replicas: 4
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+      - name: my-app
+        image: samirsingh123/web-image:1.1
+        ports:
+        - name: http
+          containerPort: 3000
+        startupProbe:
+          tcpSocket:
+            port: 3000
+          initialDelaySeconds: 20
+          periodSeconds: 5
